@@ -65,6 +65,6 @@ class Solution:
  🤝 Contributing
 
 This is primarily for my personal learning, but suggestions and improvements are welcome!
-Feel free to open an **issue** or a **pull request**.
+Feel free to open an issue or a pull request.
 
 
