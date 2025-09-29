@@ -1,0 +1,16 @@
+nums = [0, 0, 0, 2, 0, 0]
+
+def zerofilled(nums):
+    count = 0
+    zero_seq_length = 0
+    
+    for num in nums:
+        if num == 0:
+            zero_seq_length += 1
+            count += zero_seq_length
+        else:
+            zero_seq_length = 0
+    
+    return count
+
+print(zerofilled(nums))  # This will print the actual result
