@@ -1,0 +1,15 @@
+num=2147483645
+def numof1bits (num):
+
+    binary=bin(num)
+    print(binary)
+    count=0
+    for i in binary:
+        if i== '1':
+            count +=1
+
+
+    print("total ones are ",count)
+
+
+numof1bits (num)
