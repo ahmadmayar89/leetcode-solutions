@@ -1,0 +1,10 @@
+from typing import List  # Import List for type hinting
+
+n = 5
+def countBits(n: int) -> List[int]:
+    dp = [0] * (n + 1)
+    for i in range(1, n + 1):
+        dp[i] = dp[i // 2] + (i % 2)
+    return dp
+
+print(countBits(n))
