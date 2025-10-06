@@ -1,0 +1,28 @@
+import random
+
+class Master:
+    def __init__(self, secret):
+        self.secret = secret
+        self.guess_count = 0
+    
+    def guess(self, word):
+        self.guess_count += 1
+        if len(word) != len(self.secret):
+            return -1
+        return sum(a == b for a, b in zip(word, self.secret))
+
+def findSecretWord(wordlist, master, allowedGuesses):
+    while wordlist and master.guess_count < allowedGuesses:
+        # Pick a random word to try
+        word = random.choice(wordlist)
+        matches = master.guess(word)
+        print(f"Guessed: {word}, Matches: {matches}")
+        
+        if matches == len(master.secret):
+            print("You guessed the secret word correctly.")
+            return
+        
+        # Filter words that have the same match count with this guess
+        wordlist = [w for w in wordlist if sum(a == b for a, b in zip(w, word)) == matches]
+
+    print("Either you took too many guesses, or you did not find the secret word.")
