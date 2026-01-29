@@ -1,0 +1,15 @@
+from typing import List
+
+class Solution:
+    nums = [1,2,3,4,1]  
+
+    def duplicate(self) -> bool:  
+        seen = set()
+        for num in Solution.nums: 
+            if num in seen:
+                return True
+            seen.add(num)
+        return False
+
+obj = Solution()
+print(obj.duplicate())  
